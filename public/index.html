@@ -1,0 +1,15 @@
+<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bhivanta AI Team — Netlify Autopilot</title>
+<style>body{font-family:system-ui,sans-serif;background:#f6f3ea;color:#0B1F15;max-width:900px;margin:0 auto;padding:20px}h1{color:#0B1F15}.card{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px;margin:12px 0}button{background:#0B1F15;color:#fff;border:0;padding:10px 16px;border-radius:8px;cursor:pointer}pre{white-space:pre-wrap;background:#0B1F15;color:#f6f3ea;padding:12px;border-radius:8px}</style></head>
+<body><h1>Bhivanta Organics — AI Team</h1><p><b>Better Care. Happier Plants.</b> | Netlify Autopilot (Web, koi mobile app nahi)</p>
+<div class="card"><h2>Autopilot Status</h2><p id="health">Loading...</p><button onclick="loadCycle()">Aaj ka Autopilot Cycle dekho</button><pre id="cycle"></pre></div>
+<div class="card"><h2>Company Structure — Standard SOP</h2><p><b>Subah:</b> Har employee ka draft bano. <b>Dopahar:</b> Approval Queue check. <b>Shaam:</b> CEO Report. <b>Weekly:</b> Review draft. <b>Monthly:</b> Brand audit draft.</p>
+<p><b>WhatsApp autopilot se BAHAR hai</b> — us par kuch auto nahi hoga. <b>Kabhi auto nahi:</b> live publish, customer/retailer ko live message, price/discount/payment, certified/guaranteed wala dawa, koi number invent karna.</p>
+<p><b>Spending cap: ₹0.</b> Kill switch: Netlify env me AUTOPILOT_ENABLED=false kar do to worker ruk jayega.</p></div>
+<div class="card"><h2>Teams (5) — Employees (20)</h2><pre id="teams"></pre></div>
+<script>
+async function j(u){const r=await fetch(u);return r.json()}
+async function init(){try{const h=await j('/.netlify/functions/api?action=health');document.getElementById('health').textContent=JSON.stringify(h);const t=await j('/.netlify/functions/api?action=teams');document.getElementById('teams').textContent=JSON.stringify(t,null,2)}catch(e){document.getElementById('health').textContent='Local preview me functions nahi chalenge — Netlify deploy ke baad chalenge. Error: '+e.message}}
+async function loadCycle(){const c=await j('/.netlify/functions/api?action=cycle');document.getElementById('cycle').textContent=JSON.stringify(c,null,2)}
+init();
+</script></body></html>
