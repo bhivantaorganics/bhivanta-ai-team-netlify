@@ -1,0 +1,1 @@
+{"description":"Bhivanta AI Team — Netlify autopilot version (static web + scheduled worker, WhatsApp excluded, zero paid deps)","main":"lib/autopilot.js","name":"bhivanta-ai-team-netlify","scripts":{"test":"node --test tests/autopilot.test.js"},"version":"1.0.0"}

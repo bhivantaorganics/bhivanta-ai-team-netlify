@@ -1,0 +1,8 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+# No build command needed: static public/ + plain Node functions.
+# Env vars to set in Netlify UI (never in repo):
+#   AUTOPILOT_ENABLED=true   (false = kill switch / pause)
+#   ADMIN_PASSWORD=<owner sets himself in Netlify UI, never in chat/repo>
